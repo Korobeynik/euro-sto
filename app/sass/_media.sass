@@ -1,0 +1,299 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1500px)
+	/**/
+	.choise-grid
+		max-width: 1600px
+	.catalog.page .one .catalog-btn
+		top: 31rem
+	.catalog.page .two .catalog-btn
+		top: 1rem
+	.container
+		max-width: 1250px
+		width: 100%
+	.advantages
+		.container
+			max-width: 1350px
+			width: 100%				
+	.promo-list ul li
+		color: #fff
+		font-size: 2.2rem
+		line-height: 3rem
+	.img-wrap .text
+		font-size: 2.3rem
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+	.flex-grid
+		flex-direction: column
+		flex-wrap: wrap
+		align-items: center
+	.top-descr
+		width: 90%
+		margin-bottom: 2rem
+	.promo-img
+		min-height: 300px
+	.promo-list
+		max-width: 100%
+
+	.promo-section-img
+		.img-wrap
+			display: none
+	.promo-section .promo-title
+		display: none
+	.choose-lift
+		.flex-grid
+			flex-direction: row
+			align-items: flex-start
+	.choise-grid
+		position: relative		
+	.choise-filter
+		z-index: 100
+		width: 150px
+		position: absolute
+		top: 0
+		transition: all 0.4s ease
+		margin-left: -150px
+		margin-right: 0
+		//height: 100%
+		//margin-left: -50px
+		&.active
+			margin-left: 0
+			box-shadow: 10px 10px 250px rgba(0,0,0, 0.7)
+		.open
+			display: block
+			background-color: #e8e8e8
+			position: absolute
+			top: 50%
+			width: 70px
+			height: 70px
+			border-radius: 50%
+			right: -30px
+			margin-top: -40px
+			background-image: url("../img/right-arrow.svg")
+			background-size: 40%	
+			background-repeat: no-repeat
+			background-position: 90% 50%
+	.container .gap, .container .mix
+		width: 90%
+	.choise-content
+		width: 100%
+		position: relative
+		justify-content: center
+	.choise-content .choise-item
+		min-height: 340px
+	.promo-section-img
+		padding: 0
+	.help .promo-btn
+		width: 80%
+	.catalog.page .one img,
+	.catalog.page .two img
+		position: relative
+		top: 0
+		left: 0
+		max-width: 100%
+		margin: 5rem 0
+	.catalog.page .two img
+		margin-bottom: 0	
+	.catalog.page
+		background: none
+	.catalog.page .one .catalog-btn
+		display: block
+		position: absolute
+		padding: .3rem 2rem
+		top: -3rem
+		left: 50%
+		transform: translateX(-50%)
+	.catalog.page .two .catalog-btn
+		display: block
+		position: absolute
+		padding: .3rem 2rem
+		top: -3rem
+		left: 50%
+		transform: translateX(-50%)
+	.breadcrumbs li a
+		font-size: 2.6rem
+	.home .flex-grid
+		justify-content: center
+	.slideshow
+		width: 100%
+		height: auto
+	.slideshow__item 
+		float: right
+		border: 1px solid #ddd
+		width: 100%
+		height: auto
+	.gall-wrap
+		margin-top: 5rem
+	.slideshow__display img
+		margin-top: 0												
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 600px)
+	/**/
+	.promo-list
+		max-width: 100%
+	.promo-btn
+		width: 100%
+		padding: 2rem 1rem
+	.promo-list
+		position: absolute
+		top: 3rem
+		left: 0rem
+		width: 100%
+		padding: 10rem 10rem
+	.promo-text .text
+		display: inline-block
+		width: 90%
+
+	.promo-list
+		position: absolute
+		top: 3rem
+		left: 0
+		width: 100%
+		padding: 10rem 7rem
+	.advantages-grid .advantag-item
+		width: 90% !important
+		position: static !important
+		margin-bottom: 1rem
+	.advantages-grid.two-line .advantag-item:nth-child(3)
+		 display: none
+	.advantages-grid.two-line .advantag-item:nth-child(2)
+		margin-bottom: 7rem
+	.advantages .base-title
+		padding-bottom: 2rem
+		padding-left: 0
+		text-align: center
+	.timer-wrap
+		width: 100%
+	.timer-wrap img
+		display: inline-block
+		padding-right: 0rem
+		padding-top: 5rem
+		max-width: 100%
+	.timer-form
+		width: 96%
+	.timer
+		padding: 2rem 0
+	.countdownHolder
+		padding-right: 0
+	// .countdownHolder
+	// 	letter-spacing: -30px
+	.timer-form .btn-form
+		width: 240px
+	.countdownHolder
+		font: 24px/1.5 Tahoma,Arial,Helvetica,sans-serif	
+	.choise-item
+		width: 90%
+		border: none
+		outline: 1px solid #ddd
+	.base-title
+		padding-left: 0
+		text-align: center
+	.choise-item .title
+		font-size: 4rem
+		line-height: 4.5rem
+	.choise-item .info span
+		line-height: 3.8rem
+		font-size: 3rem
+	.home .catalog img
+		padding-right: 0
+		width: 100%
+		max-width: 100%
+		padding-top: 2rem
+	.home .catalog
+		background-image: none
+		.catalog-btn
+			top: -1rem
+	.form-block #base-form
+		width: 96%
+	.timer-form input
+		font-size: 3rem
+	.timer-form input.name
+		background-size: 8%
+	.form-block #base-form .btn-form
+		font-size: 3rem
+	.base-form
+		width: 96%
+	.base-form .btn-form
+		width: 260px
+	.gallery-wrap
+		width: 300px
+		margin: 0 auto
+	.portfolio .container
+		.row
+			margin-right: 0
+			margin-left: 0 
+		.col-md-3
+			padding-right: 15px								
+			
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+						
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

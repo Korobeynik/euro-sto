@@ -1,0 +1,1484 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	//height: 100%
+
+
+body
+	font-size: 1.7rem
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: 'Cuprum-Regular'
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.container
+	max-width: 1200px
+	width: 100%
+	padding: 0
+
+.flex-grid
+	display: flex
+
+ul
+	margin: 0
+	padding: 0
+	li
+		list-style-type: none	
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha(opacity=$opacity)
+
+.preloader		
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 3000
+	background-color: $blue
+.pulse
+	position: relative
+	left: 50%
+	top: 50vh
+	margin-left: -40px
+	margin-top: -40px
+	width: 80px
+	&:before, &:after
+		content: ""
+		border: 5px solid #ddd
+		width: 80px
+		height: 80px
+		border-radius: 500px
+		position: absolute
+	&:before
+		animation: pulse-outer 0.8s ease-in infinite
+	&:after
+		animation: pulse-inner 0.8s linear infinite	
+
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)								
+
+/* Header */
+
+.logo
+	display: inline-block
+	width: 230px
+	img
+		max-width: 100%
+
+.top-line
+	background-color: #fff
+	padding-top: 10px
+	padding-bottom: 20px
+	font-family: "Cuprum-Bold"
+	.flex-grid
+		justify-content: space-between
+
+.top-descr
+	width: 50%
+	text-align: center
+	font-size: 3rem
+	line-height: 3rem
+	margin: auto
+
+.top-contact
+	margin: auto
+	a
+		display: block
+		text-align: right
+		color: #000
+		font-size: 2.4rem
+		line-height: 3rem	
+
+.promo-text
+	font-family: "Cuprum-Bold"
+	width: 100%
+	background-color: $blue
+	color: #fff
+	text-align: center
+	padding: 2rem 0
+	font-size: 4.5rem
+	line-height: 5.2rem
+	.text
+		display: inline-block
+		width: 70%
+		text-align: center
+
+.promo-img
+	position: relative
+	width: 100%
+	margin: 0 auto
+	min-height: 490px
+	background-image: url("../img/promo-bg.jpg")
+	background-size: cover
+	background-position: center
+	img
+		max-width: 100%
+		height: 100%		
+
+.promo-list
+	position: absolute
+	top: 3rem
+	left: 5rem
+	width: 100%
+	max-width: 650px
+	padding: 10rem 15rem
+	background-image: url("../img/shadow.png")
+	//box-shadow: inset 118px 118px 100px rgba(0,0,0, 0.5)
+	background-size: 100%
+	background-position: 0 40%
+	background-repeat: no-repeat
+	font-family: "Cuprum-Bold"
+	text-align: left
+	ul
+		margin-bottom: 20px
+		li
+			color: #fff
+			font-size: 2.5rem
+			line-height: 3rem
+.promo-btn, .thank-btn
+	width: 400px
+	padding: 8px 50px
+	font-size: 2.5rem
+	line-height: 2.5rem
+	text-align: center
+	display: block
+	background-image: linear-gradient(to bottom, #fd9c1b, #fdcc6e)
+	color: #000
+	font-weight: bold
+	font-family: "Cuprum-Bold"
+	border-radius: 5px
+	box-shadow: 0 2px 0 2px #fd9c1b
+	transition: all 0.4s ease
+	&:hover,&:visited,&:focus
+		background-color: #fd9c1b
+		background-image: linear-gradient(to bottom, #fd9c1b, #fd9c1b)
+		text-decoration: none
+		color: #000
+		outline: none		
+
+/* Section */
+
+.base-title
+	font-family: "Cuprum-Bold"
+	font-size: 4rem
+	line-height: 4rem
+	color: #000
+	padding-left: 15rem
+.base-section
+	padding: 3rem 0
+
+/*advantages*/
+.advantages
+	.base-title
+		padding-bottom: 5rem
+		padding-left: 15rem
+.advantages-grid
+	text-align: center
+	padding: 0 5rem
+	&.one-line
+		.advantag-item:nth-child(1)
+			padding: 4rem 2rem
+			animation-delay: 0.3s
+		.advantag-item:nth-child(2)
+			padding: 0 2rem
+			padding-top: 1rem
+			width: 25%
+			border: none
+			animation-delay: 0.1s
+		.advantag-item:nth-child(3)
+			padding: 2.5rem 2rem
+			width: 20%
+			top: 3rem
+			animation-delay: 0.5s
+	&.two-line
+		.advantag-item:nth-child(1)
+			border: none
+			padding: 2.5rem 2rem
+			position: relative
+			right: -3.5rem
+			animation-delay: 0.7s
+		.advantag-item:nth-child(2)
+			width: 30%
+			color: #fff
+			background-color: $blue
+			top: -5rem
+			left: 2rem
+			animation-delay: 0.3s
+	&.two-line
+		.advantag-item:nth-child(3)
+			opacity: 0 !important
+			border: none
+	&.three-line
+		position: relative
+		top: -5rem
+		.advantag-item:nth-child(1)
+			width: 25%
+			color: #fff
+			padding: 3rem 2rem
+			position: relative
+			right: -3rem
+			top: -5.5rem
+			background-color: $blue
+			animation-delay: 0.4s
+		.advantag-item:nth-child(2)
+			position: relative
+			left: -1.8rem
+			width: 28%	
+			padding: 3rem 4rem
+			animation-delay: 0.5s
+		.advantag-item:nth-child(3)
+			padding: 5rem 1rem
+			width: 25%
+			position: relative
+			top: -6rem
+			left: -3rem
+			animation-delay: 0.2s					
+	.advantag-item
+		width: 23%
+		display: inline-block
+		border: 5px solid $blue
+		vertical-align: top
+		margin-bottom: 20px
+		padding: 5rem 2rem
+		margin: 5px
+		position: relative
+		animation-duration: 0.5s;
+		.title
+			font-family: Cuprum-Bold
+			font-size: 3rem
+			font-weight: bold
+			line-height: 3rem
+		.text
+			font-size: 2rem
+			line-height: 2.5rem
+			span
+				font-family: Cuprum-Bold
+				font-size: 3rem
+				font-weight: bold
+				line-height: 2rem
+
+.choise-item .info span
+	line-height: 2.2rem
+
+
+/* breadcrumbs */
+.breadcrumbs
+	padding-left: 10rem
+	li
+		display: inline-block
+		margin-right: 10px
+		position: relative
+		&:last-child
+			&:after
+				display: none
+		&:after
+			content: "/"
+			display: block
+			position: absolute
+			right: -10px
+			top: 4px
+		&.active
+			a
+				color: $blue
+		a
+			color: #000
+			font-size: 2rem
+
+/*Timer*/
+/*============= Timer block ============*/
+.timer-block
+	background-color: #f4f3f3
+	padding-top: 20px
+	padding-bottom: 20px
+
+.timer-wrap
+	width: 50%
+	text-align: right
+	img
+		display: inline-block
+		padding-right: 5rem	
+		padding-top: 5rem
+.timer-title
+	text-align: right
+	font-size: 36px
+	line-height: 50px
+	width: 100%
+	padding-right: 3%
+	font-family: "Cuprum-Bold"		
+	.decor
+		text-decoration: underline
+		position: relative
+		display: inline-block
+		&:before	
+			content: ""
+			display: inline-block
+			width: 100%
+			height: 2px
+			position: absolute
+			top: 45% 
+			background-color: #000
+
+.timer-form
+	width: 40%
+	.btn-form
+		display: block
+		margin: 0 auto
+		padding: 0.5rem 4rem
+		width: 300px
+		background-color: $orange
+		border: none
+		font-size: 2rem
+		letter-spacing: 1px
+		text-transform: uppercase
+		color: #fff
+		font-family: "Cuprum-Bold"
+		border-radius: 10px
+		margin-top: 10px
+		box-shadow: 0 1px 0 2px #da4908
+		transition: all 0.4s ease
+		&:hover
+			background-color: #da4908
+	input
+		width: 260px
+		display: block
+		margin: 0 auto
+		text-align: center
+		padding: 6px 30px 6px 30px
+		border-radius: 0px
+		margin-bottom: 15px
+		border: none
+		background-image: url("../img/icon-phone.png")
+		background-repeat: no-repeat
+		background-position: 10px 50%
+		text-align: left
+		padding-left: 40px
+		&.phone
+			width: 260px
+			border-radius: 0px
+			margin-bottom: 10px
+			padding-left: 40px
+			text-align: left
+			background-image: url("../img/icon-phone.png")
+			background-size: 10%
+			background-position: 6px 50%
+		&.name
+			background-image: url("../img/icon-men.png")
+		&.email
+			background-image: url("../img/icon-sms.png")		
+	.title-form
+		color: #fff
+		font-size: 4rem
+		line-height: 4.5rem
+		margin-bottom: 20px
+		border-bottom: 3px solid $blue
+		padding-bottom: 10px
+		text-align: right
+		color: #000
+		font-family: "Cuprum-Bold"
+
+
+.base-form
+	width: 40%
+	display: block
+	margin: 0 auto
+	background-color: #FFF
+	position: relative
+	text-align: center
+	padding: 6rem 5rem
+	padding-top: 10rem
+	border-radius: 5rem
+	.form-text
+		font-size: 4rem
+		line-height: 4rem
+		margin-top: 4rem
+		font-family: "Cuprum-Bold"
+		color: #000
+	.btn-form
+		display: block
+		margin: 0 auto
+		padding: 0.5rem 4rem
+		width: 300px
+		background-color: $orange
+		border: none
+		font-size: 2rem
+		letter-spacing: 1px
+		text-transform: uppercase
+		color: #fff
+		font-family: "Cuprum-Bold"
+		border-radius: 10px
+		margin-top: 10px
+		box-shadow: 0 1px 0 2px #da4908
+		transition: all 0.4s ease
+		&:hover
+			background-color: #da4908
+	input
+		width: 260px
+		display: block
+		margin: 0 auto
+		text-align: center
+		padding: 6px 30px 6px 30px
+		border-radius: 0px
+		margin-bottom: 15px
+		border: none
+		background-image: url("../img/icon-phone.png")
+		background-repeat: no-repeat
+		background-position: 10px 50%
+		text-align: left
+		padding-left: 40px
+		background-color: #dedddd
+		&.phone
+			width: 260px
+			border-radius: 0px
+			margin-bottom: 10px
+			padding-left: 40px
+			text-align: left
+			background-image: url("../img/icon-phone.png")
+			background-size: 10%
+			background-position: 6px 50%
+		&.name
+			background-image: url("../img/icon-men.png")
+		&.email
+			background-image: url("../img/icon-sms.png")
+	.mfp-close
+		color: $blue
+		//font-weight: bold
+		top: 8px
+		right: 8px
+		font-size: 7rem				
+
+.timer
+	margin-top: 20px
+	padding: 2rem
+	text-align: center
+	background-color: #fff
+	border: 1px solid #ddd
+	border-radius: 10px
+	.countdown.countdownHolder
+		display: inline-block
+	.digit
+		color: #fff
+		background-color: #3f3f3f
+	.digit.static
+		background-color: #3f3f3f
+		background-image: none	
+.timer-header
+	font-family: "Cuprum-Bold"
+	font-size: 22px
+	text-transform: uppercase
+	color: #111
+	width: 100%
+	padding-right: 3%
+
+.countdownHolder
+	text-align: right
+	padding-right: 3%
+
+#note
+	padding-right: 3%
+	font-size: 2.5rem
+
+/* ========== choise-grid =========== */
+
+.choise-grid
+	width: 100%
+	max-width: 940px
+	margin: 0 auto
+	flex-wrap: wrap
+
+.choise-item
+	width: 25%
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	min-height: 385px
+	border-bottom: 3px solid #e8e8e8 
+	border-left: 3px solid #e8e8e8 
+	border-right: 3px solid #e8e8e8
+	&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(6),&:nth-child(7),&:nth-child(8)
+		border-left: 1px solid #e8e8e8
+	&:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8)
+		border-bottom: none	  
+	.choise-img
+		width: 190px
+		height: 199px
+		margin-bottom: 5px
+		display: flex
+		img
+			max-width: 100%
+			display: block
+			margin: auto
+	&:hover
+		background-color: #e8e8e8
+		text-decoration: none
+		.choise-img
+			background-color: #fff
+		.title
+			text-decoration: none
+		span
+			text-decoration: none	
+	.title
+		color: #000
+		font-family: "Cuprum-Bold"
+		font-size: 3rem
+		line-height: 4rem
+		border-bottom: 3px solid $blue
+		margin-bottom: 15px
+		margin: 0 2rem
+		line-height: 3.5rem
+		text-align: left
+		margin-bottom: 10px
+		width: 90%
+		&:hover
+			text-decoration: none
+	.info
+		font-family: "Cuprum-Bold"	
+		span
+			display: block
+			color: #000	
+
+
+.catalog
+	background-color: #e8e8e8
+	text-align: center
+	padding: 2rem 0
+	position: relative
+	background-image: url("../img/arrow.png")
+	background-repeat: no-repeat
+	background-position: 60% 40%
+	img
+		padding-right: 5rem
+		padding-top: 2rem
+
+.home
+	.catalog
+		background-color: #e8e8e8
+		text-align: center
+		padding: 2rem 0
+		position: relative
+		background-image: url("../img/arrow.png")
+		background-repeat: no-repeat
+		background-position: 60% 40%
+		img
+			padding-right: 5rem
+			width: 100%
+			max-width: 40%
+			padding-top: 2rem		
+
+.catalog-btn
+	color: #fff
+	font-family: "Cuprum-Bold"
+	background-color: $red
+	box-shadow: 0 1px 0 1px #850101
+	font-size: 2.3rem
+	border-radius: 8px
+	padding: 0.3rem 7rem
+	transition: all 0.4s ease
+	letter-spacing: 0.5px
+	display: inline-block
+	position: relative
+	top: 8rem
+	&:hover,&:focus,&:visited
+		color: #fff
+		text-decoration: none
+		background-color: #850101
+
+.form-block
+	background-image: url("../img/bg.jpg")
+	background-size: cover
+	padding: 10rem 0
+	#base-form
+		width: 45%
+		max-width: 600px
+		display: block
+		margin: 0 auto
+		background-color: rgba(232,232,232, 0.7)
+		padding: 7rem 5rem
+		border-radius: 30px
+		.title-form
+			text-align: center
+			span
+				font-size: 2.8rem
+		.btn-form
+			background-color: $red
+			margin-top: 5px
+			box-shadow: 0 1px 0 1px #850101
+			transition: all 0.4s ease
+			&:hover
+				background-color: #850101		
+
+
+.why-wrap
+	background-color: #e8e8e8
+	padding: 3rem 0
+	.container
+		max-width: 940px
+	.why-item
+		padding-right: 7rem
+		margin-bottom: 20px
+		animation-duration: 1s
+		&:nth-child(3),&:nth-child(4)
+			animation-delay: 0.5s
+		&:nth-child(5),&:nth-child(6)
+			animation-delay: 0.7s
+		&:nth-child(7),&:nth-child(8)
+			animation-delay: 1s		
+		.title
+			font-family: "Cuprum-Bold"
+			font-size: 3rem
+			font-weight: bold
+			line-height: 3rem
+			color: #000
+			letter-spacing: -1px
+			margin-bottom: 5px
+		.text
+			line-height: 2.4rem
+			font-size: 2rem		
+
+
+/*============= Gallery =============*/
+.portfolio
+	position: relative
+	.base-title
+		padding-left: 0rem
+	.container
+		max-width: 940px
+		.col-md-3
+			padding-right: 0
+
+.home-gallery
+	margin-bottom: 15px
+.gallery-wrap
+	display: block
+	min-height: 170px
+	background-size: cover
+	position: relative		
+
+.mfp-ready .mfp-figure
+	opacity: 0
+
+img.mfp-img
+	width: 100%	
+
+.mfp-zoom-in
+	.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+		opacity: 0
+		-webkit-transition: all .3s ease-out
+		transition: all .3s ease-out
+		-webkit-transform: scale(0.95)
+		-ms-transform: scale(0.95)
+		transform: scale(0.95)
+	.mfp-preloader, &.mfp-bg
+		opacity: 0
+		-webkit-transition: all .3s ease-out
+		transition: all 0.3s ease-out
+	&.mfp-image-loaded .mfp-figure
+		opacity: 1
+		-webkit-transform: scale(1)
+		-ms-transform: scale(1)
+		transform: scale(1)
+	&.mfp-ready
+		.mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 1
+			-webkit-transform: scale(1)
+			-ms-transform: scale(1)
+			transform: scale(1)
+		.mfp-preloader, &.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+			-webkit-transform: scale(0.95)
+			-ms-transform: scale(0.95)
+			transform: scale(0.95)
+			opacity: 0
+		.mfp-preloader, &.mfp-bg
+			opacity: 0
+
+.mfp-preloader
+	width: 30px !important
+	height: 30px !important
+	background-color: #f89807
+	opacity: .65
+	margin: 0 auto
+	-webkit-animation: rotateplane 1.2s infinite ease-in-out
+	animation: rotateplane 1.2s infinite ease-in-out
+
+@-webkit-keyframes rotateplane
+	0%
+		-webkit-transform: perspective(120px)
+
+	50%
+		-webkit-transform: perspective(120px) rotateY(180deg)
+
+	100%
+		-webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+
+
+@keyframes rotateplane
+	0%
+		-webkit-transform: perspective(120px) rotateX(0) rotateY(0)
+		transform: perspective(120px) rotateX(0) rotateY(0)
+
+	50%
+		-webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0)
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0)
+
+	100%
+		-webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)				
+
+
+
+.question
+	text-align: center
+	padding: 3rem
+	padding-bottom: 4rem
+	vertical-align: middle
+	.text
+		display: inline-block
+		font-size: 6rem
+		line-height: 6rem
+		font-family: "Cuprum-Bold"
+		letter-spacing: 1px
+		color: #000
+		vertical-align: middle
+		margin-right: 3rem
+	a
+		display: inline-block	
+		vertical-align: middle
+		color: #000
+		font-size: 3rem
+		text-decoration: underline
+
+footer
+	.top-line
+		background-color: $blue
+		.top-descr
+			color: #fff
+		.top-contact
+			a
+				color: #fff	
+
+
+/* Page style */
+.promo-section
+	.promo-title
+		color: #000
+		font-size: 5.5rem
+		line-height: 5rem
+		padding: 2rem 0
+		padding-left: 10rem
+		font-family: "Cuprum-Bold"
+	&-img
+		padding: 5rem 0
+		text-align: center
+
+.img-wrap
+	display: inline-block
+	position: relative
+	.text
+		font-size: 2.5rem
+		color: #000
+		line-height: 2rem
+		text-align: left
+		position: absolute
+	&.one
+		.text
+			position: absolute
+			&.one
+				top: -40px
+				left: 105px
+			&.two
+				bottom: 30px
+	&.two
+		.text:nth-child(1)
+			right: 110px
+			top: -22px
+		.text:nth-child(2)
+			top: 37%
+		.text:nth-child(3)
+			right: 5px
+			top: 38%
+		.text:nth-child(4)
+			right: 0%
+			bottom: 22%
+		.text:nth-child(5)
+			bottom: 8px
+			right: 6%				
+								
+
+.choise-filter
+	width: 20%
+	margin-right: 20px
+	background-color: #e8e8e8
+	position: relative
+	.open
+		display: none
+	h4
+		font-size: 2.5rem
+		line-height: 3rem
+		padding: 0
+		font-family: "Cuprum-Bold"
+		margin: 1rem 0
+		color: #000
+	input[type="checkbox"]
+		width: 18px
+		height: 18px
+		display: inline-block
+		vertical-align: middle
+		margin-right: 5px
+		display: flex
+		flex-shrink: 0
+	label
+		display: inline-block
+		vertical-align: middle
+		color: #000
+		font-size: 2rem
+		line-height: 2rem
+		margin-top: 1px
+	fieldset
+		border: none
+	.checkbox
+		display: flex
+		margin-bottom: 5px
+
+#Reset
+	display: block
+	margin: 0 auto
+
+.choise-content
+	width: 77%
+	display: flex
+	flex-wrap: wrap			
+	.choise-item
+		width: 100%
+		justify-content: flex-start
+		padding-top: 3rem
+		min-height: 430px
+		text-align: center
+		position: relative
+		border: none
+		outline: 1px solid #e8e8e8	
+		&:hover
+			input
+				background-color: #e8e8e8
+				cursor: default
+			.btn-wrap
+				display: block 			
+		.btn-wrap
+			width: 100%
+			background-color: #e8e8e8
+			position: absolute
+			display: none
+			bottom: -9.5rem
+			padding: 2rem 0 3rem 0
+			z-index: 10
+			outline: 1px solid #e8e8e8
+			box-shadow: 0 3px 5px rgba(0,0,0, 0.2)
+			a
+				display: inline-block
+				padding: 0.5rem 5rem
+				font-family: "Cuprum-Bold"
+				background-color: #fa702a
+				box-shadow: 0 1px 0 1px #da4908
+				color: #fff
+				font-size: 2rem
+				border-radius: 10px
+				transition: all 0.4s ease
+				&:hover
+					background-color: #da4908
+					text-decoration: none		
+	.choise-form
+		text-align: center
+		padding-top: 1rem
+		margin-top: auto
+		input
+			display: inline-block
+			text-align: center
+			border: none
+			font-family: "Cuprum-Bold"
+			padding: 0
+			line-height: 0
+			margin-bottom: 0
+			color: #000
+			&.dol
+				max-width: 30px
+		p
+			font-family: "Cuprum-Bold"
+			color: #000		
+			font-size: 2.5rem
+			line-height: 3rem
+			position: relative
+			bottom: 0px
+			margin: 0
+			&.dol
+				font-size: 2rem
+				font-family: "Cuprum-Regular"
+	.choise-descr
+		color: #868181
+		font-family: "Cuprum-Regular"
+		font-size: 2rem
+		line-height: 2.5rem
+		span
+			display: block
+	.choise-title
+		color: #000
+		font-family: "Cuprum-Bold"
+		font-size: 2.6rem
+		line-height: 4rem
+		margin-top: 0.5rem		
+
+
+
+
+.container
+	.mix, .gap
+		width: 33%
+		display: inline-block
+		//margin: 0 5%
+
+.container .mix
+	display: none
+
+.masonry
+	padding: 0.75em
+
+.input-wrap
+	text-align: left
+	margin-bottom: 10px
+	span
+		text-align: left
+		padding: 0 0.5rem
+	input
+		width: 90px
+		border: 2px solid #6f6f6f
+		padding-left: 10px	
+
+.ui-slider
+	position: relative
+	text-align: left
+	.ui-slider-handle
+		position: absolute
+		z-index: 2
+		width: 15px
+		height: 15px
+		cursor: default
+		-ms-touch-action: none
+		touch-action: none
+		cursor: pointer
+	.ui-slider-range
+		position: absolute
+		z-index: 1
+		font-size: .7em
+		display: block
+		border: 0
+		background-position: 0 0
+	&.ui-state-disabled
+		.ui-slider-handle, .ui-slider-range
+			filter: inherit
+
+
+.ui-slider-horizontal
+	height: 7px
+	.ui-slider-handle
+		top: -.3em
+		margin-left: -.6em
+		border-radius: 50%
+		-webkit-border-radius: 50%
+		-moz-border-radius: 50%
+		-o-border-radius: 50%
+	.ui-slider-range
+		top: 0
+		height: 100%
+	.ui-slider-range-min
+		left: 0
+	.ui-slider-range-max
+		right: 0
+
+
+.ui-slider-vertical
+	width: .8em
+	height: 100px
+	.ui-slider-handle
+		left: -.3em
+		margin-left: 0
+		margin-bottom: -.6em
+	.ui-slider-range
+		left: 0
+		width: 100%
+	.ui-slider-range-min
+		bottom: 0
+	.ui-slider-range-max
+		top: 0
+
+
+.ui-widget
+	font-family: Verdana,Arial,sans-serif
+	font-size: 1.1em
+	.ui-widget
+		font-size: 1em
+	input, select, textarea, button
+		font-family: Verdana,Arial,sans-serif
+		font-size: 1em
+
+
+.ui-widget-content
+	margin-top: 10px
+	border: 1px solid #c6c6c6
+	background: #fff
+	color: #222222
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	-o-border-radius: 4px
+	border-radius: 4px
+	a
+		color: #222222
+
+.ui-widget-header
+	background: #6f6f6f
+	color: #222222
+	font-weight: bold
+	a
+		color: #222222
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+	font-weight: normal
+	color: #555555
+	border: 1px solid #ccc
+	border-top: 1px solid #eee
+	background: #fafafa
+	/* Old browsers*/
+	background: -moz-linear-gradient(top, #fafafa 0%, #f2f0f1 39%, #e8e8e8 100%)
+	/* FF3.6+*/
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa), color-stop(39%, #f2f0f1), color-stop(100%, #e8e8e8))
+	/* Chrome,Safari4+*/
+	background: -webkit-linear-gradient(top, #fafafa 0%, #f2f0f1 39%, #e8e8e8 100%)
+	/* Chrome10+,Safari5.1+*/
+	background: -o-linear-gradient(top, #fafafa 0%, #f2f0f1 39%, #e8e8e8 100%)
+	/* Opera 11.10+*/
+	background: -ms-linear-gradient(top, #fafafa 0%, #f2f0f1 39%, #e8e8e8 100%)
+	/* IE10+*/
+	background: linear-gradient(to bottom, #fafafa 0%, #f2f0f1 39%, #e8e8e8 100%)
+	/* W3C*/
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e8e8e8',GradientType=0 )
+	/* IE6-9*/
+	-webkit-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff
+	-moz-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff
+	-ms-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff
+	-o-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff
+	box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff
+
+.ui-state-default a
+	color: #555555
+	text-decoration: none
+	&:link, &:visited
+		color: #555555
+		text-decoration: none
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+	border: 1px solid #fff
+	background: #6f6f6f
+	outline: none
+	font-weight: normal
+	color: #212121
+
+
+.help
+	background-color: #e8e8e8
+	text-align: center
+	padding: 6rem 0
+	.base-title
+		padding: 0
+		padding-bottom: 2rem
+		font-size: 4.5rem
+	.promo-btn
+		width: 40%
+		font-size: 3rem
+		padding: 2rem 0
+		margin: 0 auto
+
+.catalog.page
+	background-color: #fff
+	padding: 6rem 0
+	background-image: none
+	background: url(../img/arrow.png) 41% 74% no-repeat, 
+	url(../img/arrow2.png) 57% 4% no-repeat
+	img
+		padding: 0
+	.one
+		position: relative
+		//background-image: url("../img/arrow.png")
+		background-repeat: no-repeat
+		img
+			position: relative
+			top: 6rem
+			left: -5rem
+		.catalog-btn
+			display: block
+			position: absolute
+			// width: 100%
+			// max-width: 360px
+			padding: 0.3rem 2rem
+			top: 36rem
+			//left: 42rem
+			right: -20rem
+	.two
+		position: relative
+		img
+		.catalog-btn
+			display: block
+			position: absolute
+			// width: 100%
+			// max-width: 360px
+			padding: 0.3rem 2rem
+			top: 3rem
+			left: -30rem		
+
+a.gallery-wrap.btn-gallery-wrap.catalog-btn
+	min-height: auto
+	&:focus
+		text-decoration: none
+		color: #fff
+		outline: none
+
+
+.curs
+	text-align: center
+	padding: 3rem 0
+	font-size: 2rem
+	font-family: "Cuprum-Bold"
+	p
+		background-color: #e8e8e8
+		border: none
+		margin: 0
+		text-align: center
+		font-family: "Cuprum-Bold"
+		&:hover
+			cursor: default
+
+
+/* jeep page*/
+.jeep
+	.img-wrap.two .text:nth-child(1) 
+		right: 79px
+		top: -22px
+
+/* buss page */
+
+.buss
+	.img-wrap.one .text.one 
+		top: 14rem
+		left: 1rem
+	.img-wrap.one .text.two
+		bottom: 1rem
+		right: 8rem
+	.img-wrap.two .text:nth-child(2)
+		top: 92%
+		right: 1rem
+	.img-wrap.two .text:nth-child(1)
+		right: 110px
+		top: -2px
+
+/* gruz */
+.gruz
+	.img-wrap
+		width: 40%
+		img
+			margin: 0 3rem
+	.img-wrap.one
+		img
+			max-width: 80%		
+
+
+/* razval */
+.razval
+	.img-wrap.two .text:nth-child(1)
+		right: 39rem
+		top: -22px
+	.img-wrap.two .text:nth-child(2)
+		top: 91%
+		left: 3rem
+	.img-wrap.two .text:nth-child(3)
+		right: 14rem
+		top: 93%
+		padding-bottom: 5px
+		padding-right: 10px
+		border-bottom: 1px solid #000
+
+
+/*shinomontazh*/
+.shinomontazh
+	.img-wrap
+		img
+			max-width: 100%
+	.img-wrap.one .text.one
+		top: -3rem
+		left: 7rem
+	.img-wrap.two .text:nth-child(2)
+		top: 87%
+		left: 7rem
+	.img-wrap.two .text:nth-child(1)
+		left: 1rem
+		top: 0rem
+
+
+/**Ямный домкрат*/
+.yamnyye
+	.img-wrap.one .text.one
+		top: 10rem
+		left: 0rem
+	.img-wrap.one .text.two
+		left: 39rem
+		bottom: -3rem
+	.img-wrap.two .text:nth-child(2)
+		top: 104%
+		left: 21rem
+
+
+
+/* Product */
+
+.product
+	.promo-section
+		padding:  5rem 0
+		.container
+			max-width: 960px
+	.breadcrumbs
+		margin-bottom: 20px
+	.help .promo-btn
+		font-size: 4rem
+		line-height: 3.5rem
+	.btn-wrap a
+		display: inline-block
+		padding: .5rem 5rem
+		font-family: Cuprum-Bold
+		background-color: #fa702a
+		-webkit-box-shadow: 0 1px 0 1px #da4908
+		box-shadow: 0 1px 0 1px #da4908
+		color: #fff
+		font-size: 2rem
+		-webkit-border-radius: 10px
+		border-radius: 10px
+		-webkit-transition: all .4s ease
+		transition: all .4s ease
+		&:hover
+			background-color: #da4908
+			text-decoration: none		
+
+.product-description
+	text-align: center
+	.product-name
+		text-align: left
+		font-family: "Cuprum-Bold"
+		font-size: 3rem
+		line-height: 4rem
+		margin-bottom: 1rem
+	.product-item
+		text-align: left
+		margin: 0
+		font-size: 2.2rem
+		line-height: 2.5rem
+		margin-bottom: 0.5rem
+		span
+			display: inline-block
+			padding-left: 2rem
+			font-size: 2rem
+	.choise-form
+		padding-top: 3rem
+		p
+			margin: 0
+		.grn
+			font-family: "Cuprum-Bold"
+			font-size: 3rem
+			line-height: 3rem
+		.dol
+			font-size: 2rem			
+
+.feature
+	.container
+		max-width: 960px
+	.wrap
+		padding: 0
+	.feature-title
+		font-family: "Cuprum-Bold"
+		font-size: 3rem
+		margin-bottom: 3.5rem
+		border-bottom: 1px solid #ddd
+		span
+			display: inline-block
+			background-color: #dcdcdc
+			padding: 0 2rem
+			border-radius: 10px
+	.pl
+		padding-left: 0
+	.gall-wrap	
+		.gallery-wrap
+			min-height: 157px
+	.feature-list
+		padding-right: 2rem
+		li
+			display: block
+			padding: 0.5rem 1rem
+			text-align: left
+			span
+				display: inline-block
+				width: 30%
+				float: right
+		li:nth-child(odd)
+			background-color: #dcdcdc		
+
+
+.slideshow
+	width: 430px
+	background-color: #fff
+
+.slideshow__list
+	float: right
+	width: 20%
+	display: none
+
+.slideshow__display
+	width: 100%
+	float: left
+	height: 327px
+	position: relative
+	overflow: hidden
+	display: flex
+	&:hover
+		cursor: default
+		//cursor: crosshair
+	//border: 1px solid #ddd
+	img
+		display: block
+		margin: auto
+		max-width: 100%
+		width: 70%
+
+.slideshow__item
+	float: right
+	border: 1px solid #ddd
+	width: 100px
+	height: 82px
+	opacity: .6
+	overflow: hidden
+	&.active
+		opacity: 1
+
+.slideshow__pic
+	display: block
+	width: 100%
+	height: 100%
+
+.slideshow__item img
+	min-width: 100%
+	width: 100%
+
+
+.send-message
+	width: 300px
+	display: block
+	margin: 0 auto
+	position: fixed
+	left: 50%
+	top: 45%
+	transform: translateX(-50%)
+	z-index: 2000
+	background-color: $blue
+	border-radius: 20px
+	padding: 5% 2%
+
+
+.thank-page
+	height: 100vh
+	display: flex
+	align-items: center
+	flex-direction: column
+	background-image: url("../img/promo-bg.jpg")
+	background-size: cover
+	background-position: center
+	//background-image: url("../img/shadow.png")
+	.thank-btn
+		font-family: Cuprum-Bold
+		font-size: 35px
+		padding: 20px
+		display: block
+		margin: 0 auto
+	.text-block
+		margin: auto
+		text-align: center
+		color: #fff
+		font-size: 45px
+		line-height: 50px
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: 50% -30%
+		.text
+			margin-bottom: 30px
+
+.thank-wrap
+	margin: auto
+	max-width: 600px
+	width: 100%
+	padding: 8rem 5rem
+	background-image: url("../img/shadow2.png")
+	background-size: contain
+
+
+.col-md-6.wrap.gall-wrap
+	display: none
+
+.feature .wrap 
+	padding: 0
+	width: 100%
+
+
+
+@import "media" // Всегда в конце
